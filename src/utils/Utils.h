@@ -20,8 +20,8 @@ namespace Utils {
 
     static inline bool sfxOver() {
 
-        return ( PS::sfxDataPtr >= PS::sfxEndPtr );
-
+        //!!HV return ( PS::sfxDataPtr >= PS::sfxEndPtr );
+        return true;
     }
     
     static inline void printffloat(float d) {

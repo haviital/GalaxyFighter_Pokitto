@@ -32,17 +32,18 @@ int main() {
     PC::setFrameRate(200);
     PD::setFont(fontC64);
 
-    #if POK_HIGH_RAM == HIGH_RAM_MUSIC
-    memset(buffers[0], 128, BUFFER_SIZE);
-    memset(buffers[1], 128, BUFFER_SIZE);
-    memset(buffers[2], 128, BUFFER_SIZE);
-    memset(buffers[3], 128, BUFFER_SIZE);
-    #else
-    memset(&(buffers[0]), 128, BUFFER_SIZE);
-    memset(&(buffers[1]), 128, BUFFER_SIZE);
-    memset(&(buffers[2]), 128, BUFFER_SIZE);
-    memset(&(buffers[3]), 128, BUFFER_SIZE);
-    #endif
+    //!!HV
+    // #if POK_HIGH_RAM == HIGH_RAM_MUSIC
+    // memset(buffers[0], 128, BUFFER_SIZE);
+    // memset(buffers[1], 128, BUFFER_SIZE);
+    // memset(buffers[2], 128, BUFFER_SIZE);
+    // memset(buffers[3], 128, BUFFER_SIZE);
+    // #else
+    // memset(&(buffers[0]), 128, BUFFER_SIZE);
+    // memset(&(buffers[1]), 128, BUFFER_SIZE);
+    // memset(&(buffers[2]), 128, BUFFER_SIZE);
+    // memset(&(buffers[3]), 128, BUFFER_SIZE);
+    // #endif
 
 
     // Kick off the random number generator ..
@@ -68,7 +69,7 @@ int main() {
     
     if (!PC::update()) continue;
     
-        PC::sound.updateStream();
+        //!!HV PC::sound.updateStream();
         game.loop();
     
     }
